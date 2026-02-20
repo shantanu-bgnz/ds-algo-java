@@ -1,5 +1,5 @@
 package dsa.trees;
-
+import java.util.*;
 public class TreeTraversal {
 
     static class Node {
@@ -27,6 +27,30 @@ public class TreeTraversal {
 
         System.out.println("\nPostorder:");
         postorder(root);
+
+        System.out.println("Level Order:");
+        levelOrder(root);
+    }
+
+    private static void levelOrder(Node root) {
+        if(root == null) {
+            return;
+        }
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while(!q.isEmpty()) {
+            Node current = q.poll();
+            System.out.print(current.data + " ");
+
+            if(current.left != null) {
+                q.add(current.left);
+            }
+            if(current.right != null) {
+                q.add(current.right);
+            }
+        }
     }
 
     private static void postorder(Node root) {
