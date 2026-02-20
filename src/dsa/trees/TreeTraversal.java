@@ -28,7 +28,7 @@ public class TreeTraversal {
         System.out.println("\nPostorder:");
         postorder(root);
 
-        System.out.println("Level Order:");
+        System.out.println("\nLevel Order:");
         levelOrder(root);
     }
 
